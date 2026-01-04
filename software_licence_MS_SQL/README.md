@@ -58,3 +58,10 @@ SELECT c.CustomerID,c.Cst_Name,c.Cst_email,o.Order_ID,o.Order_Date,o.Ordr_Total_
 FROM customer c
 INNER JOIN orders o
 ON c.CustomerID=o.CustomerID;
+
+
+SELECT i.Order_Item_ID,i.Order_ID,i.Product_sku_ID,
+i.Order_Item_Quantity,i.Order_Item_Price,o.CustomerID,o.Order_Date,o.Ordr_Status
+FROM order_item i
+RIGHT JOIN orders o
+ON i.Order_ID=o.Order_ID;
